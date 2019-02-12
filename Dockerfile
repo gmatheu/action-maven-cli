@@ -17,8 +17,9 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/* \
       /tmp/* \
       /var/tmp/*
+ENV SDKMAN_DIR=/opt/sdkman
 RUN curl -s "https://get.sdkman.io" | bash
-RUN bash -c 'source "$HOME/.sdkman/bin/sdkman-init.sh" \
+RUN bash -c 'source "${SDKMAN_DIR}/bin/sdkman-init.sh" \
     && sdk install maven 3.6.0'
 COPY LICENSE README.md /
 COPY entrypoint.sh /entrypoint.sh

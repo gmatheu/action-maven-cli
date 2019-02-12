@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 echo "==========Starting Maven Commands=========="
 
